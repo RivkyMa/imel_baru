@@ -322,19 +322,26 @@
     src="">
 </iframe>
 
+<button id="btnMusic" onclick="startMusic()" 
+style="position:fixed;bottom:20px;left:50%;transform:translateX(-50%);
+padding:12px 24px;border:none;border-radius:25px;
+background:rgba(255,255,255,0.2);color:white;
+backdrop-filter:blur(10px);z-index:999;">
+🎵 Tap to Play Music
+</button>
+
 <script>
 let isPlaying = false;
 
 function startMusic() {
     if (!isPlaying) {
         document.getElementById("sc-music").src =
-        "https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/user-980818882/bruno-mars-risk-it-all-slowed&auto_play=true&hide_related=true&show_comments=false&show_user=false&show_reposts=false";
+        "https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/user-980818882/bruno-mars-risk-it-all-slowed&auto_play=true";
         isPlaying = true;
+
+        document.getElementById("btnMusic").style.display = "none";
     }
 }
-
-// trigger saat user klik
-document.body.addEventListener("click", startMusic);
 </script>
   </body>
 </html>
